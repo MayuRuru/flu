@@ -1,5 +1,6 @@
 import 'package:flupro/Common/MyRoutes.dart';
 import 'package:flupro/Pages/LoginPage.dart';
+import 'package:flupro/Values/ThemeApp.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,16 +8,28 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    ThemeApp themeApp = ThemeApp();
     return MaterialApp(
-      title: 'FirstFlut',
+      title: 'First Flutter',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: MyRoutes.generateRoute,
       initialRoute: ROUTE_LOGIN,
-      //theme: ThemeData(),
-      home:LoginPage(),
+      themeMode: themeMode,
+      darkTheme: ThemeData(
+          textTheme: textThemeDark,
+          scaffoldBackgroundColor: backgroundDark,
+          iconTheme:iconThemeData1 ,
+          primaryIconTheme: iconThemeData1,
+          accentIconTheme: iconThemeDark
+      ),
+      theme: ThemeData(indicatorColor: Colors.red,
+        textTheme: themeApp.textTheme,
+        iconTheme: themeApp.iconThemeData1,
+        primaryIconTheme: themeApp.iconThemeData1,
+        accentIconTheme: themeApp.iconThemeData2
+      ),
     );
   }
 }

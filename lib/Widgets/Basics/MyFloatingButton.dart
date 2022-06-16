@@ -3,15 +3,13 @@ import 'package:flupro/Pages/PlaylistPage.dart';
 import 'package:flutter/material.dart';
 
 class MyFloatingButton extends StatelessWidget {
+  VoidCallback voidCallback;
+  MyFloatingButton(this.voidCallback);
+
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-        onPressed: (){
-          Navigator.pushAndRemoveUntil(
-              context,
-              ROUTE_PLAYLIST,
-                  (Route<dynamic>route) => false);
-          },
+        onPressed: ()=> voidCallback(),
         child: Icon(
           Icons.add,
           size:40,

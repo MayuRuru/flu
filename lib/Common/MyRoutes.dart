@@ -3,6 +3,7 @@ import 'package:flupro/Pages/LoginPage.dart';
 import 'package:flupro/Pages/NowPlayingPage.dart';
 import 'package:flupro/Pages/PlaylistPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:page_transition/page_transition.dart';
 
 const String ROUTE_HOME = "/home";
