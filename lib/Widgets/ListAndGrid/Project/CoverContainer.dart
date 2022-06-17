@@ -1,5 +1,6 @@
+import 'package:flupro/Values/Sizes.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart;
+import 'package:flutter/material.dart';
 
 class CoverContainer extends StatelessWidget {
   String image;
@@ -14,7 +15,7 @@ class CoverContainer extends StatelessWidget {
         print("onTap");
       },
       child: Container(
-        width: coverWith,
+        width: coverWidth,
         margin: EdgeInsets.symmetric(vertical: 30, horizontal: 10),
         decoration: BoxDecoration(
           image: DecorationImage(

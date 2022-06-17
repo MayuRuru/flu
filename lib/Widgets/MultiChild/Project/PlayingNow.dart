@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-//import 'package:my_first_app/Model/Sound.dart';
+import 'package:flupro/Model/Sound.dart';
 
 import 'PlayButton.dart';
 
 class PlayingNow extends StatelessWidget {
-  //Sound sound;
+  Sound sound;
 
-  //PlayingNow(this.sound);
+  PlayingNow(this.sound);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,7 +24,7 @@ class PlayingNow extends StatelessWidget {
               fit: BoxFit.fitWidth,
             ),
             Image.asset(
-              //sound.cover,
+              sound.cover,
               width: 200,
               height: 200,
             ),
@@ -36,7 +36,7 @@ class PlayingNow extends StatelessWidget {
             Column(
               children: [
                 Text(
-                  //sound.title,
+                  sound.title,
                   style: TextStyle(
                     fontSize: 50,
                     letterSpacing: 10,
@@ -45,7 +45,7 @@ class PlayingNow extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  //sound.author,
+                  sound.singer,
                   style: TextStyle(
                     fontSize: 30,
                     letterSpacing: 5,
@@ -61,15 +61,6 @@ class PlayingNow extends StatelessWidget {
               iconColor: Colors.blueGrey,
             )
           ],
-        ),
-        Text(
-          //sound.time,
-          style: TextStyle(
-            fontSize: 40,
-            letterSpacing: 10,
-            fontFamily: "Teko",
-            color: Colors.blueGrey,
-          ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

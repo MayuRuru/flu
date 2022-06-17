@@ -1,12 +1,7 @@
 import 'package:flupro/Values/TextStylesApp.dart';
 import 'package:flutter/material.dart';
 
-class ThemeApp {
-  TextStylesApp? textStylesApp;
-
-  ThemeApp() {
-    textStylesApp = TextStylesApp();
-  }
+import 'ColorsApp.dart';
 
   TextTheme get textTheme =>
       TextTheme(
@@ -30,15 +25,13 @@ class ThemeApp {
 
   IconThemeData get iconThemeData1 =>
       IconThemeData(
-          color: icon1Color
+          color: icons1,
       );
 
   IconThemeData get iconThemeData2 =>
-      iconThemeData1.copyWith(color: icon2Color);
+      iconThemeData1.copyWith(color: icons2);
 
-  IconThemeData get iconThemeDark =>
+ IconThemeData get iconThemeDark =>
       IconThemeData(
-          color: iconDark
+          color: iconsDark
       );
-
-}

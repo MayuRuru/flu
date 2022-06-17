@@ -1,15 +1,16 @@
+import 'package:flupro/Values/Sizes.dart';
 import 'package:flutter/material.dart';
 import '../../../Model/Sound.dart';
 import '../../../Common/MyKeys.dart';
+import 'CoverContainer.dart';
+import 'SoundListTile.dart';
 
-class PlayListView extends StatefulWidget {
-  PlayListView() : super(key: playListView);
-
+class PlaylistView extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => PlayListViewState();
+  State<StatefulWidget> createState() => PlaylistViewState();
 }
 
-class PlayListViewState extends State<PlayListView> {
+class PlaylistViewState extends State<PlaylistView> {
   List<Sound> mySounds = [];
 
   @override
@@ -19,7 +20,7 @@ class PlayListViewState extends State<PlayListView> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: Column(

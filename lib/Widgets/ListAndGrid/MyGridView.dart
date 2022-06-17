@@ -1,4 +1,4 @@
-import 'package:flupro/Widgets/Items/Items/MyCard.dart';
+import 'package:flupro/Widgets/ListAndGrid/Items/MyCard.dart';
 import 'package:flutter/material.dart';
 
 class MyGridView extends StatelessWidget {

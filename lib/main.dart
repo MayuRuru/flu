@@ -1,79 +1,55 @@
+import 'package:flupro/Common/MyKeys.dart';
 import 'package:flupro/Common/MyRoutes.dart';
 import 'package:flupro/Pages/LoginPage.dart';
 import 'package:flupro/Values/ThemeApp.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  //creamos constructor y asignamos llave global:
+  MyApp():super(key: myAppKey);
+  @override
+  State<StatefulWidget> createState()=>MyAppState();
+}
+
+class MyAppState extends State<MyApp>{
+
+  ThemeMode themeMode = ThemeMode.light;
   @override
   Widget build(BuildContext context) {
-    ThemeApp themeApp = ThemeApp();
-    return MaterialApp(
+
+    return Sizer(builder:
+        (context, orientation, deviceType)=>
+            MaterialApp(
       title: 'First Flutter',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: MyRoutes.generateRoute,
       initialRoute: ROUTE_LOGIN,
-      themeMode: themeMode,
+      themeMode: themeMode, //variable asignada con llave que se puede cmabiar estado
       darkTheme: ThemeData(
           textTheme: textThemeDark,
-          scaffoldBackgroundColor: backgroundDark,
-          iconTheme:iconThemeData1 ,
-          primaryIconTheme: iconThemeData1,
-          accentIconTheme: iconThemeDark
+          //scaffoldBackgroundColor: backgroundDark,
+          iconTheme:  iconThemeData1 ,
+          primaryIconTheme: iconThemeDark
       ),
       theme: ThemeData(indicatorColor: Colors.red,
-        textTheme: themeApp.textTheme,
-        iconTheme: themeApp.iconThemeData1,
-        primaryIconTheme: themeApp.iconThemeData1,
-        accentIconTheme: themeApp.iconThemeData2
+        textTheme: textTheme,
+        //scaffoldBackgroundColor: background,
+        iconTheme: iconThemeData1,
+        primaryIconTheme: iconThemeData1
       ),
+    )
     );
   }
-}
 
-
-/*
-
-class GamePage extends StatefulWidget {
-  const GamePage({Key? key}) : super(key: key);
-
-  @override
-  State<GamePage> createState() => _GamePageState();
-}
-
-class _GamePageState extends State<GamePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Widget1, eureka',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.green,
-            ),
-            ),
-            TextButton(
-                onPressed: () {
-                  print('hello carck');
-                },
-              child:
-              const Text('Hit me!',
-                  style: TextStyle(
-                      color: Colors.blue)
-              ),
-            ),
-          ],
-        ),
-      )
-    );
+  changeTheme(ThemeMode themeMode){
+    setState((){
+      this.themeMode = themeMode;
+    });
   }
 }
-*/
 

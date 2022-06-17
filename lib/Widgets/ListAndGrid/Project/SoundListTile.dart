@@ -1,8 +1,6 @@
 import 'package:flupro/Common/MyKeys.dart';
 import 'package:flutter/material.dart';
-//import 'package:my_first_app/Common/MyKeys.dart';
-//import 'package:my_first_app/Common/MyRouters.dart';
-
+import 'package:flupro/Common/MyRoutes.dart';
 import '../../../Model/Sound.dart';
 
 typedef VoidCallbackParam(Sound sound);
@@ -24,14 +22,15 @@ class SoundListTile extends StatelessWidget {
         sound.singer,
       ),
 
-      trailing: InkWell(
+      /*trailing: InkWell(
         onTap: ()=> myListViewKey.currentState?.remove(sound),
         child: PopupMenuButton(
           icon: IconTheme(data:
-            Theme.of(context).accentIconTheme,
+            Theme.of(context).primaryIconTheme,
           child: Icon(Icons.more),),
+          itemBuilder: (BuildContext context) {  },
         ),
-      ),
+      ),*/
 
       leading: IconTheme(data:
       Theme.of(context).primaryIconTheme,
@@ -39,7 +38,7 @@ class SoundListTile extends StatelessWidget {
         Icons.play_circle_fill,
       )),
       onTap: () {
-        Navigator.pushNamed(context, ROUTE_NOW_PLAYING,arguments: sound);
+        Navigator.pushNamed(context, ROUTE_NOWPLAYING,arguments: sound);
       },
       onLongPress: () {
         print("ListTile onLongPress");

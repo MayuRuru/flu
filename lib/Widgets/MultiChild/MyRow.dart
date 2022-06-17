@@ -7,19 +7,18 @@ class MyRow extends StatelessWidget {
     return SingleChildScrollView(
       //scrollDirection: Axis.horizontal,
         child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Column(children: [
-          Text("Menu1"),
-          Text("Menu1"),
-          Text("Menu1"),
-        ],)
-        Text("Menu2"),
-        Text("Menu2"),
-        Text("Menu2"),
-      ],
-    );
-    ),
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Column(children: [
+              Text("Menu1"),
+              Text("Menu1"),
+              Text("Menu1"),
+            ],
+            ),
+            Text("Menu2"),
+            Text("Menu2"),
+          ],
+        ));
   }
 }

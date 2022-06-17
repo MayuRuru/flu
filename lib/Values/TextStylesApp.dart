@@ -1,9 +1,6 @@
+import 'package:flupro/Values/Sizes.dart';
 import 'package:flutter/material.dart';
-
 import 'ColorsApp.dart';
-
-class TextStylesApp {
-  TextStylesApp();
 
   TextStyle get textBase =>
       TextStyle(
@@ -14,7 +11,7 @@ class TextStylesApp {
   TextStyle get subtitle1 =>
       textBase.copyWith(
         fontWeight: FontWeight.w400,
-        //fontSize:
+        fontSize: subtitleText
       );
 
   TextStyle get subtitle1Dark => subtitle1.copyWith(color: textDark);
@@ -68,4 +65,3 @@ class TextStylesApp {
       headline3.copyWith(
           color: textDark
       );
-}
