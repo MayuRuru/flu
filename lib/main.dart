@@ -1,6 +1,5 @@
 import 'package:flupro/Common/MyKeys.dart';
 import 'package:flupro/Common/MyRoutes.dart';
-import 'package:flupro/Pages/LoginPage.dart';
 import 'package:flupro/Values/ThemeApp.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -32,7 +31,7 @@ class MyAppState extends State<MyApp>{
       title: 'First Flutter',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: MyRoutes.generateRoute,
-      initialRoute: ROUTE_HOME,
+      initialRoute: ROUTE_LOGIN,
       themeMode: themeMode, //variable asignada con llave que se puede cmabiar estado
       darkTheme: ThemeData(
           textTheme: textThemeDark,

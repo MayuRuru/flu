@@ -33,15 +33,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SingleChildScrollView(child: Scaffold(
+
         drawer: MyDrawer(),
         //hamburguesa
         bottomNavigationBar: MyBottomNavbar(onTab, currentIndex),
         backgroundColor: Colors.pinkAccent,
         floatingActionButton: FloatingActionButtonProject(bottomSheet),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-        appBar: AppBarProject("My uplifting playlist"),
-        body: fragments[currentIndex]);
+        appBar: AppBarProject("Enjoy and dance!"),
+        body: fragments[currentIndex])
+      );
   }
 
   bottomSheet() {

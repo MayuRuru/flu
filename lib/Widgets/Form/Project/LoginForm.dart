@@ -1,3 +1,4 @@
+import 'package:flupro/Common/MyRoutes.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
@@ -12,7 +13,6 @@ class LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
 
     return Center(
         child: SingleChildScrollView(
@@ -25,8 +25,8 @@ class LoginFormState extends State<LoginForm> {
                     "My uplifting playlist",
                     style: TextStyle(
                       fontSize: 40,
-                      letterSpacing: 10,
-                      //fontFamily: "Teko",
+                      //letterSpacing: 10,
+                      fontFamily: "Catalina",
                       color: Colors.blueGrey,
                     ),
                   ),
@@ -34,15 +34,13 @@ class LoginFormState extends State<LoginForm> {
                     children: [
                       Padding(
                           padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Icon(
-                            Icons.my_library_music,
-                            color: Colors.pink[100],
-                            size: 170,
-                          )),
-                      Icon(
-                        Icons.library_music_outlined,
-                        color: Colors.blueGrey,
-                        size: 170,
+                          child: Image(
+                            image:
+                          AssetImage("assets/images/music.gif"),
+                            width: 300,
+                            height: 300,
+                            fit: BoxFit.cover,
+                      ),
                       ),
                     ],
                   ),
@@ -51,47 +49,52 @@ class LoginFormState extends State<LoginForm> {
                       child: TextFormField(
                         controller: emailCtrl,
                         decoration:
-                        decoration("Correo", Icons.email_outlined),
+                        decoration("e-mail", Icons.email_outlined),
                         validator: (value) {
                           String pattern =
                               r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
                           RegExp regExp = new RegExp(pattern);
                           if (value?.length == 0) {
-                            return "El email es necesario";
+                            return "E-mail is needed!";
                           } else if (!regExp.hasMatch(value.toString())) {
-                            return "Correo invalido";
+                            return "Incorrect e-mail!";
                           }
-
                           return null;
                         },
                         keyboardType: TextInputType.emailAddress,
-                      )),
+                      )
+                  ),
                   Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: TextFormField(
                         controller: passwordCtrl,
                         decoration:
-                        decoration("Contraseña", Icons.lock_outline),
+                        decoration("password", Icons.lock_outline),
                         obscureText: true,
-                      )),
+                      )
+                  ),
                   Padding(
                       padding: EdgeInsets.only(bottom: 50),
                       child: Align(
                           alignment: Alignment.centerRight,
                           child: RichText(
                               text: TextSpan(
-                                  text: "¿Olvidate tú contraseña? ",
+                                  text: "¿Forgot got it again? ",
                                   style:
                                   TextStyle(color: Colors.blueGrey),
                                   children: [
                                     TextSpan(
-                                        text: "Recuperarla",
+                                        text: "Get it back",
                                         style: TextStyle(
                                             color: Colors.pink[100],
                                             fontWeight: FontWeight.bold,
                                             decoration:
-                                            TextDecoration.underline))
-                                  ])))),
+                                            TextDecoration.underline)
+                                    )
+                                  ])
+                          )
+                      )
+                  ),
                   SizedBox(
                       width: double.infinity,
                       height: 40,
@@ -102,14 +105,21 @@ class LoginFormState extends State<LoginForm> {
                               primary: Colors.blueGrey,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(
-                                      Radius.circular(30)))),
+                                      Radius.circular(30)
+                                  )
+                              )
+                          ),
                           onPressed: () {
-                            print("TextButton");
+                            Navigator.popAndPushNamed(context, ROUTE_HOME);
                           },
-                          child: Text("Go ahead!")))
+                          child: Text("Go ahead!")
+                      )
+                  )
                 ],
-              )),
-        ));
+              )
+          ),
+        )
+    );
   }
 
   decoration(String text, IconData icon) {
@@ -130,7 +140,7 @@ class LoginFormState extends State<LoginForm> {
 
   save() {
     if (formKey.currentState!.validate()) {
-      print("Nombre ${emailCtrl.text}");
+      print("Name ${emailCtrl.text}");
       formKey.currentState?.reset();
     }
   }
