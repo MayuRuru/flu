@@ -1,7 +1,9 @@
 import 'package:flupro/Pages/HomePage.dart';
 import 'package:flupro/Widgets/MultiChild/Project/PlayingNow.dart';
-import 'package:flupro/Widgets/MultiChild/MyColumn.dart';
+import 'package:flupro/Widgets/MultiChild/Items/MyColumn.dart';
 import 'package:flutter/material.dart';
+
+import '../Model/Sound.dart';
 
 class NowPlayingPage extends StatefulWidget{
   @override
@@ -11,9 +13,10 @@ class NowPlayingPage extends StatefulWidget{
 class NowPlayingPageState extends State<NowPlayingPage>{
    @override
    Widget build(BuildContext context){
+     Sound sound = ModalRoute.of(context)?.settings.arguments as Sound;
      return Scaffold(
        body: SafeArea(
-         child: PlayingNow(),
+         child: PlayingNow(sound),
          ),
        );
    }

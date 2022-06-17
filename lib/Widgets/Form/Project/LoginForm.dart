@@ -22,11 +22,11 @@ class LoginFormState extends State<LoginForm> {
               child: Column(
                 children: [
                   Text(
-                    "Codigo Facilito",
+                    "My uplifting playlist",
                     style: TextStyle(
                       fontSize: 40,
                       letterSpacing: 10,
-                      fontFamily: "Teko",
+                      //fontFamily: "Teko",
                       color: Colors.blueGrey,
                     ),
                   ),
@@ -106,7 +106,7 @@ class LoginFormState extends State<LoginForm> {
                           onPressed: () {
                             print("TextButton");
                           },
-                          child: Text("Guardar")))
+                          child: Text("Go ahead!")))
                 ],
               )),
         ));

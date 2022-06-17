@@ -1,7 +1,7 @@
 import 'package:flupro/Widgets/ListAndGrid/Items/MyListTile.dart';
 import 'package:flutter/material.dart';
-import '../../Common/MyKeys.dart';
-import '../../Model/Sound.dart';
+import '../../../Common/MyKeys.dart';
+import '../../../Model/Sound.dart';
 
 class MyListView extends StatefulWidget {
   MyListView():super(key: myListViewKey);

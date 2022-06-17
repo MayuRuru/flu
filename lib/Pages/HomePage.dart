@@ -1,9 +1,11 @@
-import 'package:flupro/Widgets/Basics/MyAppBar.dart';
-import 'package:flupro/Widgets/Basics/MyButtons.dart';
-import 'package:flupro/Widgets/Basics/MyFloatingButton.dart';
-import 'package:flupro/Widgets/Basics/MyIcon.dart';
-import 'package:flupro/Widgets/Basics/MyImage.dart';
-import 'package:flupro/Widgets/Basics/MyRichText.dart';
+import 'package:flupro/Widgets/Basics/Items/MyAppBar.dart';
+import 'package:flupro/Widgets/Basics/Items/MyButtons.dart';
+import 'package:flupro/Widgets/Basics/Items/MyFloatingButton.dart';
+import 'package:flupro/Widgets/Basics/Items/MyIcon.dart';
+import 'package:flupro/Widgets/Basics/Items/MyImage.dart';
+import 'package:flupro/Widgets/Basics/Items/MyRichText.dart';
+import 'package:flupro/Widgets/Basics/Project/AppBarProject.dart';
+import 'package:flupro/Widgets/Basics/Project/FloatingActionButtonProject.dart';
 import 'package:flupro/Widgets/Menu/Fragments/MyHome.dart';
 import 'package:flupro/Widgets/Menu/Fragments/MyProfile.dart';
 import 'package:flupro/Widgets/Menu/Fragments/MySettings.dart';
@@ -11,7 +13,7 @@ import 'package:flupro/Widgets/Menu/MyBottomNavbar.dart';
 import 'package:flupro/Widgets/Menu/MyDrawer.dart';
 import 'package:flutter/material.dart';
 
-import '../Widgets/Basics/MyText.dart';
+import '../Widgets/Basics/Items/MyText.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -36,13 +38,13 @@ class _HomePageState extends State<HomePage> {
         //hamburguesa
         bottomNavigationBar: MyBottomNavbar(onTab, currentIndex),
         backgroundColor: Colors.pinkAccent,
-        floatingActionButton: MyFloatingButton(buttomSheet),
+        floatingActionButton: FloatingActionButtonProject(bottomSheet),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-        appBar: MyAppBar("title title"),
+        appBar: AppBarProject("My uplifting playlist"),
         body: fragments[currentIndex]);
   }
 
-  buttomSheet() {
+  bottomSheet() {
     showModalBottomSheet(
         context: context,
         builder: (builder) {

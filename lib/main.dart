@@ -5,13 +5,17 @@ import 'package:flupro/Values/ThemeApp.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+import 'Values/ColorsApp.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
   //creamos constructor y asignamos llave global:
   MyApp():super(key: myAppKey);
+
   @override
   State<StatefulWidget> createState()=>MyAppState();
 }
@@ -19,7 +23,7 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp>{
 
   ThemeMode themeMode = ThemeMode.light;
-  @override
+
   Widget build(BuildContext context) {
 
     return Sizer(builder:
@@ -28,17 +32,17 @@ class MyAppState extends State<MyApp>{
       title: 'First Flutter',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: MyRoutes.generateRoute,
-      initialRoute: ROUTE_LOGIN,
+      initialRoute: ROUTE_HOME,
       themeMode: themeMode, //variable asignada con llave que se puede cmabiar estado
       darkTheme: ThemeData(
           textTheme: textThemeDark,
-          //scaffoldBackgroundColor: backgroundDark,
+          scaffoldBackgroundColor: backgroundDark,
           iconTheme:  iconThemeData1 ,
           primaryIconTheme: iconThemeDark
       ),
       theme: ThemeData(indicatorColor: Colors.red,
         textTheme: textTheme,
-        //scaffoldBackgroundColor: background,
+        scaffoldBackgroundColor: background,
         iconTheme: iconThemeData1,
         primaryIconTheme: iconThemeData1
       ),
