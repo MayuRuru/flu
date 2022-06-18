@@ -1,4 +1,5 @@
 import 'package:flupro/Common/MyRoutes.dart';
+import 'package:flupro/Values/ColorsApp.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
@@ -24,10 +25,10 @@ class LoginFormState extends State<LoginForm> {
                   Text(
                     "My uplifting playlist",
                     style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 30,
                       //letterSpacing: 10,
-                      fontFamily: "Catalina",
-                      color: Colors.blueGrey,
+                      fontFamily: "Bernardo",
+                      color: text2,
                     ),
                   ),
                   Stack(
@@ -37,15 +38,15 @@ class LoginFormState extends State<LoginForm> {
                           child: Image(
                             image:
                           AssetImage("assets/images/music.gif"),
-                            width: 300,
-                            height: 300,
+                            width: 250,
+                            height: 250,
                             fit: BoxFit.cover,
                       ),
                       ),
                     ],
                   ),
                   Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 15),
                       child: TextFormField(
                         controller: emailCtrl,
                         decoration:
@@ -65,7 +66,7 @@ class LoginFormState extends State<LoginForm> {
                       )
                   ),
                   Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 15),
                       child: TextFormField(
                         controller: passwordCtrl,
                         decoration:
@@ -81,12 +82,12 @@ class LoginFormState extends State<LoginForm> {
                               text: TextSpan(
                                   text: "¿Forgot got it again? ",
                                   style:
-                                  TextStyle(color: Colors.blueGrey),
+                                  TextStyle(color: text1),
                                   children: [
                                     TextSpan(
                                         text: "Get it back",
                                         style: TextStyle(
-                                            color: Colors.pink[100],
+                                            color: text2,
                                             fontWeight: FontWeight.bold,
                                             decoration:
                                             TextDecoration.underline)
@@ -101,8 +102,8 @@ class LoginFormState extends State<LoginForm> {
                       child: OutlinedButton(
                           style: OutlinedButton.styleFrom(
                               elevation: 4,
-                              backgroundColor: Colors.pink[100],
-                              primary: Colors.blueGrey,
+                              backgroundColor: icons1,
+                              primary: text1,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(
                                       Radius.circular(30)
@@ -127,9 +128,9 @@ class LoginFormState extends State<LoginForm> {
         labelText: text,
         prefixIcon: Icon(
           icon,
-          color: Colors.pink[100],
+          color: icons1,
         ),
-        labelStyle: TextStyle(color: Colors.blueGrey),
+        labelStyle: TextStyle(color: text1),
         enabledBorder: OutlineInputBorder(
             borderSide:
             BorderSide(color: Colors.pink.withOpacity(0.3), width: 1)),

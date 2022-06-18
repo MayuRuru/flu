@@ -1,6 +1,8 @@
 import 'package:flupro/Common/MyRoutes.dart';
 import 'package:flupro/Pages/PlaylistPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flupro/Values/ColorsApp.dart';
+
 
 class FloatingActionButtonProject extends StatelessWidget {
   VoidCallback voidCallback;
@@ -13,10 +15,10 @@ class FloatingActionButtonProject extends StatelessWidget {
           Navigator.popAndPushNamed(context, ROUTE_PLAYLIST),
         },
         child: Icon(
-          Icons.add,
+          Icons.music_note,
           size:40,
       ),
-      backgroundColor: Colors.green,
+      backgroundColor: icons1,
     );
   }
 }

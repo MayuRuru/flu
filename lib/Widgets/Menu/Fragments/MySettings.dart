@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flupro/Values/ColorsApp.dart';
 
 class MySettings extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text("Cuenta gratis",style: TextStyle(
+        Text("Free account",style: TextStyle(
             color: Colors.blueGrey,
-            fontSize: 20
-        ),),
+            fontSize: 15,
+        ),
+        ),
         OutlinedButton(
             style:OutlinedButton.styleFrom(
                 padding: EdgeInsets.all(15),
@@ -21,40 +23,40 @@ class MySettings extends StatelessWidget{
                 )
             ) ,
             onPressed: (){print("TextButton");},
-            child: Text("Cabiar a premium",style: TextStyle(fontSize:19,color: Colors.blueGrey),)),
+            child: Text("Upgrade to premium",
+              style: TextStyle(
+                  fontSize:19,
+                  color: text1,
+              ),
+            )
+        ),
 
         SwitchListTile(
-            title: Text("Calidad de audio",style: TextStyle(
-                color: Colors.blueGrey
+            title: Text("Audio quality",style: TextStyle(
+                color: text1,
+            ),
+            ),
+            value: false,
+            activeColor: icons2,
+            onChanged: (value){}),
+        SwitchListTile(
+            title: Text("Non stop",style: TextStyle(
+                color:  text1,
             ),),
             value: false,
-            activeColor: Colors.pink[100],
+            activeColor: icons2,
             onChanged: (value){}),
         SwitchListTile(
-            title: Text("Descaragar solo el audio",style: TextStyle(
-                color: Colors.blueGrey
+            title: Text("Auto Play",style: TextStyle(
+                color:  text1,
             ),),
             value: true,
-            activeColor: Colors.pink[100],
-            onChanged: (value){}),
-        SwitchListTile(
-            title: Text("Sin Pausas",style: TextStyle(
-                color: Colors.blueGrey
-            ),),
-            value: false,
-            activeColor: Colors.pink[100],
-            onChanged: (value){}),
-        SwitchListTile(
-            title: Text("AutoPlay",style: TextStyle(
-                color: Colors.blueGrey
-            ),),
-            value: true,
-            activeColor: Colors.pink[100],
+            activeColor: icons2,
             onChanged: (value){}),
         ListTile(
           trailing: Icon(Icons.close),
-          title: Text("Cerrar sesión"),
-          subtitle: Text("Has iniciado sesión como Marines"),
+          title: Text("Log out"),
+          subtitle: Text("You are logged in!"),
         )
       ],
     );

@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 
+
 Color? get icons1 => Colors.purple[200];
 Color? get icons2 => Colors.green[300];
-Color get  iconsDark => Colors.white;
+Color? get  iconsDark => Colors.grey[50];
 
 
-Color get text1 => Colors.blueGrey;
-Color? get text2 => Colors.purple[200];
-Color get textDark => Colors.white;
+Color? get text1 => Colors.blueGrey[800];
+Color? get text2 => Colors.green[300];
+Color? get textDark => Colors.grey[50];
 
-Color get background => Colors.grey;
-Color get backgroundDark => Colors.black;
+Color? get background => Colors.grey[50];
+Color? get backgroundDark => Colors.blueGrey[800];
 
 //opacity:
 Color get testOpacity => Colors.red.withOpacity(1);

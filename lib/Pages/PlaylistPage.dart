@@ -1,6 +1,7 @@
 import 'package:flupro/Common/MyKeys.dart';
 import 'package:flupro/Widgets/ListAndGrid/Project/PlaylistView.dart';
 import 'package:flutter/material.dart';
+import 'package:flupro/Values/ColorsApp.dart';
 
 import '../Model/Sound.dart';
 
@@ -14,7 +15,7 @@ class PlaylistPageState extends State<PlaylistPage>{
    Widget build(BuildContext context){
      return Scaffold(
        floatingActionButton: FloatingActionButton(
-           backgroundColor: Colors.pink[100],
+           backgroundColor: icons1,
            onPressed: (){
            //aca cambiamos a modo light o dark:
            myAppKey.currentState!.changeTheme(ThemeMode.dark);

@@ -1,9 +1,3 @@
-import 'package:flupro/Widgets/Basics/Items/MyAppBar.dart';
-import 'package:flupro/Widgets/Basics/Items/MyButtons.dart';
-import 'package:flupro/Widgets/Basics/Items/MyFloatingButton.dart';
-import 'package:flupro/Widgets/Basics/Items/MyIcon.dart';
-import 'package:flupro/Widgets/Basics/Items/MyImage.dart';
-import 'package:flupro/Widgets/Basics/Items/MyRichText.dart';
 import 'package:flupro/Widgets/Basics/Project/AppBarProject.dart';
 import 'package:flupro/Widgets/Basics/Project/FloatingActionButtonProject.dart';
 import 'package:flupro/Widgets/Menu/Fragments/MyHome.dart';
@@ -12,8 +6,7 @@ import 'package:flupro/Widgets/Menu/Fragments/MySettings.dart';
 import 'package:flupro/Widgets/Menu/MyBottomNavbar.dart';
 import 'package:flupro/Widgets/Menu/MyDrawer.dart';
 import 'package:flutter/material.dart';
-
-import '../Widgets/Basics/Items/MyText.dart';
+import 'package:flupro/Values/ColorsApp.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -31,14 +24,14 @@ class _HomePageState extends State<HomePage> {
 
   int currentIndex = 0;
 
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(child: Scaffold(
 
-        drawer: MyDrawer(),
-        //hamburguesa
+        drawer: MyDrawer(), //hamburguesa
         bottomNavigationBar: MyBottomNavbar(onTab, currentIndex),
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: background,
         floatingActionButton: FloatingActionButtonProject(bottomSheet),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         appBar: AppBarProject("Enjoy and dance!"),
